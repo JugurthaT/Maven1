@@ -10,6 +10,7 @@ pipeline   {
               cleanWs()
               }
           }
+// the problem with this image is that it neds plugins for maven and downloads them each time
 	  stage (' Checkout') {
              agent {
                docker { 
