@@ -4,6 +4,12 @@
 pipeline   {
         agent none
         stages {
+          stage ('cleanup') {
+            agent any
+            steps {
+              cleanws()
+              }
+          }
 	  stage (' Checkout') {
              agent {
                docker { 
