@@ -26,7 +26,7 @@ pipeline   {
              }
              steps {
                 sh '''
-                  pwd && hostname	
+                  pwd && hostname && df -h	
                   cd src 
                   echo "starting the build message"> /status
 	          mvn package
