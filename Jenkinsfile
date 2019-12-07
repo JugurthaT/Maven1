@@ -37,13 +37,13 @@ pipeline   {
                   pwd && hostname && df -h	
                   cd src 
                   echo "starting the build message"> /status
-                  #mvn clean install -o 
 	          mvn package
                 '''
              } 
            }
            stage ('maven - create image') {
              agent any
+             // we build docker image locally on jenkins/docker server
              steps {
                sh '''
                  pwd && ls && hostname && cd src
