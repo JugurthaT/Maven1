@@ -1,3 +1,4 @@
 FROM nginx
-COPY * /hosts
+RUN mkdir -p /payload
+COPY * /payload
 
