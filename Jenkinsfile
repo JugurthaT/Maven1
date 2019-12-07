@@ -10,12 +10,13 @@ node () {
 	stage ('npm - Build') {
  	
 // Unable to convert a build step referring to "hudson.plugins.ws__cleanup.PreBuildCleanup". Please verify and convert manually if required.		// Shell build step
-sh """ 
-cd src
-echo "starting the build message"> /status
-mvn package
-docker build -t frontend . 
- """		// Shell build step
+sh "
+		cd src
+		echo "starting the build message"> /status
+		mvn package
+		docker build -t frontend . 
+   "		
+ // Shell build step
 sh """ 
 docker rm -f angular || true
 docker run -d -p 8000:80 --name angular frontend 
