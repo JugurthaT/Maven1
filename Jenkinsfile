@@ -15,7 +15,7 @@ pipeline   {
              agent {
                docker { 
                  image 'maven' 
-                 args '-v /root/.jenkins/workspace:/root/.jenkins/workspace'
+                 args '-v /root/.jenkins/workspace:/root/.jenkins/workspace -v /root/.m2:/root/.m2'
                  }
              }
              steps {
@@ -36,8 +36,8 @@ pipeline   {
                   pwd && hostname && df -h	
                   cd src 
                   echo "starting the build message"> /status
-                  mvn clean install -o 
-	         // mvn package
+                  //mvn clean install -o 
+	          mvn package
                 '''
              } 
            }
