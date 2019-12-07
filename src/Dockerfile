@@ -1,5 +1,5 @@
 FROM nginx
 RUN mkdir -p /payload
 RUN echo "Jugurtha" >> /usr/share/nginx/html/index.html
-RUN ls -alt *
+RUN ls -alt 
 COPY * /payload/
