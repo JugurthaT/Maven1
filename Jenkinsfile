@@ -10,6 +10,7 @@ pipeline   {
              }
              steps {
                echo "Checking out"
+               echo " JUG checking Out"
                checkout scm
 	       }
            }
