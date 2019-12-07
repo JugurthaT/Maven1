@@ -30,10 +30,17 @@ pipeline   {
                   cd src 
                   echo "starting the build message"> /status
 	          mvn package
-                  pwd && ls
-	          docker build -t frontend .
                 '''
              } 
+           }
+           stage ('maven - create image') {
+             agent any
+             steps {
+               sh '''
+                 pwd && ls
+                 docker build -t frontend .
+               ''' 
+             }
            }
            stage ('maven - deploy to docker') {
              agent {
