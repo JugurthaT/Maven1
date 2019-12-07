@@ -8,12 +8,13 @@ node () {
          checkout scm
 	}
 	stage ('maven - Build') {
-          sh ' pwd'	
-          sh '  cd src '
-          sh 'echo "starting the build message"> /status'
-	  sh '	mvn package'
-          sh ' cd src && pwd && ls'
-	 sh '	docker build -t frontend . '
+          sh '''
+               pwd'	
+               cd src '
+               echo "starting the build message"> /status'
+	       mvn package'
+               cd src && pwd && ls'
+	       docker build -t frontend . '
          //sh  ' 
            //     docker rm -f angular || true
              //   docker run -d -p 8000:80 --name angular frontend 
