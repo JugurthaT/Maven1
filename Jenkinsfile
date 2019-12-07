@@ -59,6 +59,13 @@ pipeline   {
                  docker run -d -p 8000:80 --name angular frontend 
                '''
              } 
-	    }  
+	    } 
+          stage ('cleanup after finish') {
+            agent any
+            steps {
+              cleanWs()
+              }
+          }
+ 
        }
 }
