@@ -37,7 +37,7 @@ pipeline   {
              agent any
              steps {
                sh '''
-                 pwd && ls && hostname
+                 pwd && ls && hostname && cd src
                  docker build -t frontend .
                ''' 
              }
