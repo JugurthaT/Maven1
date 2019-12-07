@@ -6,7 +6,10 @@ pipeline   {
         stages {
 	  stage (' Checkout') {
              agent {
-               docker { image 'maven' }
+               docker { 
+                 image 'maven' 
+                 args '-v $HOME/.m2:/root/.jenkins/workspace''
+                 }
              }
              steps {
                echo "Checking out"
@@ -16,7 +19,10 @@ pipeline   {
            }
 	  stage ('maven - Build') {
              agent {
-               docker { image 'maven' }
+               docker { 
+                  image 'maven'
+                  args '-v $HOME/.m2:/root/.jenkins/workspace'   
+                }
              }
              steps {
                 sh '''
