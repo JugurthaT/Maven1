@@ -7,8 +7,8 @@ node () {
          echo "Checking out"
          checkout scm
 	}
-	stage ('npm - Build') {
- 	
+	stage ('maven - Build') {
+          sh ' pwd'	
           sh '  cd src '
           sh 'echo "starting the build message"> /status'
 	  sh '	mvn package'
