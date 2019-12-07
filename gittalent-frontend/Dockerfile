@@ -1,3 +1,3 @@
 FROM nginx
-COPY /etc/hosts /hosts
+COPY * /hosts
 
