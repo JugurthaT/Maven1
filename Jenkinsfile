@@ -21,12 +21,13 @@
 // """ 
 //	}
 //}
-node('') {
-    checkout scm
-    stage('Build') {
-        docker.image('maven:3.3.3').inside {
-            sh 'mvn --version'
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                sh 'echo "Hello world!"'
+            }
         }
     }
 }
-
