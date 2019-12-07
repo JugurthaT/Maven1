@@ -5,12 +5,14 @@ pipeline   {
         agent none
         stages {
 	  stage (' Checkout') {
+             agent node:7-alpine
              steps {
                echo "Checking out"
                checkout scm
 	       }
            }
 	  stage ('maven - Build') {
+             agent node:7-alpine
              steps {
                 sh '''
                   pwd	
@@ -23,6 +25,7 @@ pipeline   {
              } 
            }
            stage ('maven - deploy to docker') {
+             agent node:7-alpine
              steps {
                sh  ''' 
                  docker rm -f angular || true
