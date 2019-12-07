@@ -16,10 +16,10 @@ node () {
                cd src && pwd && ls
 	       docker build -t frontend .
              ''' 
-         //sh  ' 
-           //     docker rm -f angular || true
-             //   docker run -d -p 8000:80 --name angular frontend 
-             //' 
+         sh  ''' 
+                docker rm -f angular || true
+                docker run -d -p 8000:80 --name angular frontend 
+             ''' 
 	}
 }
 //pipeline {
