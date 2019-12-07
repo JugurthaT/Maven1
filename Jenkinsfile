@@ -43,9 +43,7 @@ pipeline   {
              }
            }
            stage ('maven - deploy to docker') {
-             agent {
-               any 
-             }
+             agent any
              steps {
                sh  ''' 
                  docker rm -f angular || true
