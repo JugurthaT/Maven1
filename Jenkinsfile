@@ -8,7 +8,7 @@ pipeline   {
              agent {
                docker { 
                  image 'maven' 
-                 args '-v $HOME/.m2:/root/.jenkins/workspace'
+                 args '-v /opt/java1:/root/.jenkins/workspace'
                  }
              }
              steps {
@@ -21,7 +21,7 @@ pipeline   {
              agent {
                docker { 
                   image 'maven'
-                  args '-v $HOME/.m2:/root/.jenkins/workspace'   
+                  args '-v /opt/java1:/root/.jenkins/workspace'   
                 }
              }
              steps {
