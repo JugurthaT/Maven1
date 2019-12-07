@@ -12,7 +12,7 @@ node () {
 // Unable to convert a build step referring to "hudson.plugins.ws__cleanup.PreBuildCleanup". Please verify and convert manually if required.		// Shell build step
 sh """ 
 cd src
-echo "starting the build ">/status
+echo "starting the build "> /status
 mvn package
 docker build -t frontend . 
  """		// Shell build step
