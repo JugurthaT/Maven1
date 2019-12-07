@@ -7,7 +7,7 @@ pipeline   {
           stage ('cleanup') {
             agent any
             steps {
-              cleanws()
+              cleanWs()
               }
           }
 	  stage (' Checkout') {
