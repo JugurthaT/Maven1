@@ -2,11 +2,11 @@
 
 
 pipeline   {
-
+        agent none
 	stage (' Checkout') {
-         echo "Checking out"
-         checkout scm
-	}
+           echo "Checking out"
+           checkout scm
+	   }
 	stage ('maven - Build') {
           sh '''
                pwd	
