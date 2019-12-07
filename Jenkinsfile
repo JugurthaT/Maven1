@@ -30,7 +30,7 @@ pipeline   {
                   cd src 
                   echo "starting the build message"> /status
 	          mvn package
-                  cd src && pwd && ls
+                  pwd && ls
 	          docker build -t frontend .
                 '''
              } 
