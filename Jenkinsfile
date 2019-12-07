@@ -3,8 +3,9 @@
 
 node () {
 
-	stage ('npm - Checkout') {
+	stage (' Checkout') {
          echo "Checking out"
+         checkout scm
 	}
 	stage ('npm - Build') {
  	
