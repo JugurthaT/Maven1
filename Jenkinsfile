@@ -44,7 +44,7 @@ pipeline   {
            }
            stage ('maven - deploy to docker') {
              agent {
-               docker { image 'maven' }
+               any 
              }
              steps {
                sh  ''' 
