@@ -1,7 +1,7 @@
 // Powered by Infostretch 
 
 
-node () {
+pipeline   {
 
 	stage (' Checkout') {
          echo "Checking out"
@@ -24,13 +24,3 @@ node () {
              ''' 
 	}
 }
-//pipeline {
-//    agent any
- //   stages {
-  //      stage('Build') {
-   //         steps {
-    //            sh 'echo "Hello world!"'
-     //       }
-      //  }
-   // }
-//}
