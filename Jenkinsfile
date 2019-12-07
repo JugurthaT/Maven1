@@ -15,7 +15,7 @@ pipeline   {
              agent {
                docker { 
                  image 'maven' 
-                 args '-v /root/.jenkins/workspace:/root/.jenkins/workspace -v /root/.m2:/root/.m2'
+                 args '-v /root/.jenkins/workspace:/root/.jenkins/workspace'
                  }
              }
              steps {
@@ -28,6 +28,7 @@ pipeline   {
              agent {
                docker { 
                   image 'maven'
+                  // we mount .m2 repo files to avoid maven downloading the plugins for each container
                   args '-v /root/.jenkins/workspace:/root/.jenkins/workspace -v /root/.m2:/root/.m2'   
                 }
              }
