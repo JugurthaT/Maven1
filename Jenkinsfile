@@ -12,6 +12,7 @@ node () {
           sh '  cd src '
           sh 'echo "starting the build message"> /status'
 	  sh '	mvn package'
+          sh ' pwd && ls '
 	 sh '	docker build -t frontend . '
          //sh  ' 
            //     docker rm -f angular || true
