@@ -36,7 +36,7 @@ pipeline   {
                   pwd && hostname && df -h	
                   cd src 
                   echo "starting the build message"> /status
-                  //mvn clean install -o 
+                  #mvn clean install -o 
 	          mvn package
                 '''
              } 
