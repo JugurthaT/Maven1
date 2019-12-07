@@ -6,7 +6,7 @@ pipeline   {
         stages {
 	  stage (' Checkout') {
              agent {
-               docker { image 'node:7-alpine' }
+               docker { image 'maven' }
              }
              steps {
                echo "Checking out"
@@ -15,7 +15,7 @@ pipeline   {
            }
 	  stage ('maven - Build') {
              agent {
-               docker { image 'node:7-alpine' }
+               docker { image 'maven' }
              }
              steps {
                 sh '''
@@ -30,7 +30,7 @@ pipeline   {
            }
            stage ('maven - deploy to docker') {
              agent {
-               docker { image 'node:7-alpine' }
+               docker { image 'maven' }
              }
              steps {
                sh  ''' 
