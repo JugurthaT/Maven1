@@ -8,15 +8,14 @@ node () {
 	}
 	stage ('npm - Build') {
  	
-          sh '  cd src
-		echo "starting the build message"> /status
-		mvn package
-		docker build -t frontend . 
-             '  		
-         sh  ' 
-                docker rm -f angular || true
-                docker run -d -p 8000:80 --name angular frontend 
-             ' 
+          sh '  cd src '
+          sh 'echo "starting the build message"> /status'
+	  sh '	mvn package'
+	 sh '	docker build -t frontend . '
+         //sh  ' 
+           //     docker rm -f angular || true
+             //   docker run -d -p 8000:80 --name angular frontend 
+             //' 
 	}
 }
 //pipeline {
